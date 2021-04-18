@@ -5,15 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./source/img/FE.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/tailwind.css">
     <script src="./script/main.js"></script>
     <title>Color Picker</title>
 </head>
-<body>
-    <img id="logoHero" src="./source/img/FE.png">
-    <h1>Hello World!!</h1>
-    <pre>
-        I am a Color Picker.
-    </pre>
-    
+<body class="bg-fixed">
+    <div id="navbar" class="container flex  h-auto w-full min-w-full py-4 my-1 fit-content">
+        <img class="w-12 h-12 mx-2"  src="./source/img/FE.png">
+        <span class="text-xl py-2">I am a Color Picker</span>
+        <nav class=" space-x-4 space-y-4 py-2 px-6 w-5/6 flex justify-end">
+            <a href="http://" target="_blank" rel="home" class="px-6 py-2 border-2 border-light-blue-500 border-opacity-25 rounded-lg ">Home</a>
+            <a href="http://" target="_blank" rel="saved">Saved Colors</a>
+            <a href="http://" target="_blank" rel="about">About</a>
+        </nav>
+    </div>
+
+    <main>
+        <div class="w-full mx-2 py-6 ">
+          <!-- Replace with your content -->
+          <div class="py-6 pr-4 ">
+            <div class="border-4  bg-gray-100 border-gray-100 p-1 rounded-lg h-96 bg-opacity-75 ">
+                <section class="flex h-full">
+                    <div class=" h-full">
+                        <div id="colorshower" class="w-40 h-64 mx-1 rounded-lg" ></div>
+                        <div class="w-56">
+                            <form id="colorpicker"action="" class=" space-y-2 my-2">
+                                <div>
+                                    <input type="range" name="red" min="0" max="255" onchange="onchangePickerRange()">
+                                    <input  class="w-12 border-2  border-gray-400 rounded-lg" type="number" name="redValue" onchange="onchangePickerValue()"> R
+                                </div>
+                                <div>
+                                    <input type="range" name="green" min="0" max="255" onchange="onchangePickerRange()">
+                                    <input class="w-12 border-2  border-gray-400 rounded-lg" type="number" name="greenValue" onchange="onchangePickerValue()"> G
+                                </div>
+                                <div>
+                                    <input type="range" name="blue" min="0" max="255" onchange="onchangePickerRange()">
+                                    <input class="w-12 border-2  border-gray-400 rounded-lg" type="number" name="blueValue" onchange="onchangePickerValue()"> B
+                                </div>
+                            </form>
+                        </div>
+                    </div> 
+                    
+                    <div class=" h-full w-56 ml-6">
+                        <div class="w-40 h-64 mx-1 rounded-lg" style="background-image: url('./source/img/tg.jpg'); "><div id="alphashower" class="w-40 h-64  rounded-lg"  ></div><div>
+                        <div class="w-56">
+                            <form id="alphapicker"action="" class=" space-y-2 my-2">
+                                <div class="">
+                                    <input type="range" name="red" min="0" max="100" step=".1" onchange="onchangeAlphaRange()">
+                                    <input  class="w-12 border-2  border-gray-400 rounded-lg" type="number" name="alphaValue" step=".1"  onchange="onchangeAlphaValue()"> A
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+              </section>
+            </div>
+          </div>
+          <!-- /End replace -->
+        </div>
+      </main>      
 </body>
+<script src="./script/base.js"></script>
 </html>
